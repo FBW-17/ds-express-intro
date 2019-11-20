@@ -6,6 +6,13 @@ const arrDciModules = [
     'Final Project'
 ]
 
+const getText = (req, res) => {
+    res.send(arrDciModules.join(","))
+}
+
+const getJson = (req, res) => {
+    res.send(arrDciModules)
+}
 
 const getHtml = (req, res) => {
     let modulesHtml = arrDciModules.map(module => {
@@ -14,14 +21,6 @@ const getHtml = (req, res) => {
             + "</li>"
     })
     res.send(`<ul>${modulesHtml.join("")}</ul>`)
-}
-
-const getText = (req, res) => {
-    res.send(arrDciModules.join(","))
-}
-
-const getJson = (req, res) => {
-    res.json(arrDciModules)
 }
 
 module.exports = {getHtml, getJson, getText}
